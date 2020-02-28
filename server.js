@@ -1,24 +1,33 @@
-const express = require("express");
+var express = require('express');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var app = express();
+const db = require("./models");
+var PORT = process.env.PORT || 3001;
 
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
+app.use(bodyParser.json())
+app.use(cors())
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+)
 
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-// Add routes, both API and view
-app.use(routes);
+var Users = require('./routes/Users');
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+app.use('/users', Users);
 
-// Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
+db.sequelize
+  .sync()
+  .then(function() {
+    // ...then start web server
+    app.listen(PORT, function(err) {
+      if (err) {
+        return console.log(err);
+      }
+      console.log(`Server now running on http://localhost:${PORT}!`);
+    });
+  })
+  .catch(function(err) {
+    console.log(err, "Something went wrong with the db sync!");
+  });
