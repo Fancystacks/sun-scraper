@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class Landing extends Component {
+  // sends user back to landing page after pressing logout
   logOut(e) {
     e.preventDefault();
     localStorage.removeItem('usertoken');
@@ -9,6 +10,7 @@ class Landing extends Component {
   }
 
   render() {
+    // sends user to the register page once clicked
     const loginRegLink = (
       <ul className="navbar-nav">
         <li className="nav-item">
@@ -24,6 +26,7 @@ class Landing extends Component {
       </ul>
     )
 
+    // sends user to the profile page once clicked
     const userLink = (
       <ul className="navbar-nav">
         <li className="nav-item">
@@ -34,6 +37,21 @@ class Landing extends Component {
         <li className="nav-item">
           <a href="/#" onClick={this.logOut.bind(this)} className="nav-link">
             Logout
+          </a>
+        </li>
+      </ul>
+    )
+
+    const inputLink = (
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link to="/input" className="nav-link">
+            Input
+          </Link>
+        </li>
+        <li className="nav-item">
+          <a href="/#" onClick={this.logOut.bind(this)} className="nav-link">
+            Input
           </a>
         </li>
       </ul>

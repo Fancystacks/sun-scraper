@@ -16,6 +16,7 @@ class Register extends Component {
     this.onSubmit = this.onSubmit.bind(this)
   }
 
+  // setting our state on change
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
@@ -28,7 +29,7 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password
     }
-
+    // register user on submit and send to the login page
     register(newUser).then(res => {
       this.props.history.push(`/login`)
     })
@@ -42,7 +43,7 @@ class Register extends Component {
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">Register</h1>
               <div className="form-group">
-                <label htmlFor="name">First name</label>
+                <label htmlFor="name">First name:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -53,7 +54,7 @@ class Register extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="name">Last name</label>
+                <label htmlFor="name">Last name:</label>
                 <input
                   type="text"
                   className="form-control"
@@ -64,7 +65,7 @@ class Register extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email address</label>
+                <label htmlFor="email">Email address:</label>
                 <input
                   type="email"
                   className="form-control"
@@ -75,7 +76,7 @@ class Register extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password:</label>
                 <input
                   type="password"
                   className="form-control"
@@ -89,7 +90,7 @@ class Register extends Component {
                 type="submit"
                 className="btn btn-lg btn-primary btn-block"
               >
-                Register!
+                Register
               </button>
             </form>
           </div>

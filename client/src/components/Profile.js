@@ -32,15 +32,15 @@ class Profile extends Component {
           <table className="table col-md-6 mx-auto">
             <tbody>
               <tr>
-                <td>Fist Name</td>
+                <td>Fist Name:</td>
                 <td>{this.state.first_name}</td>
               </tr>
               <tr>
-                <td>Last Name</td>
+                <td>Last Name:</td>
                 <td>{this.state.last_name}</td>
               </tr>
               <tr>
-                <td>Email</td>
+                <td>Email:</td>
                 <td>{this.state.email}</td>
               </tr>
             </tbody>
