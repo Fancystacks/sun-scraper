@@ -28,7 +28,7 @@ class Login extends Component {
     // sends the user to the profile page once logged in
     login(user).then(res => {
       if (res) {
-        this.props.history.push(`/profile`);
+        this.props.history.push(`/input`);
       }
     })
   }
