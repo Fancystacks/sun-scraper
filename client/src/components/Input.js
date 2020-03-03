@@ -29,7 +29,7 @@ class Input extends Component {
             this.props.history.push(`/charts`)
         })
     }
-
+    
 
     render() {
         return (
