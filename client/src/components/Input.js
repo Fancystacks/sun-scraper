@@ -158,14 +158,6 @@ class Input extends Component {
                     Submit
                     </button>
                 </div>
-                <br></br>
-                <button
-                onClick={this.onSubmit}
-                type="submit"
-                className="btn btn-lg btn-success btn-block"
-                >
-                Submit
-                </button>
             </div>
         )
     }
