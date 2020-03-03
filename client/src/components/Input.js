@@ -1,6 +1,36 @@
 import React, { Component } from "react";
+import { pvWattsForm } from './UserFunctions';
 
 class Input extends Component {
+    constructor() {
+        super()
+        this.state = {
+            address:'',
+            system_capacity:''
+        }
+
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
+    }
+
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+    onSubmit(e) {
+        e.preventDefault();
+        
+
+        const newRequest = {
+            address: this.state.address,
+            system_capacity: this.state.system_capacity
+        }
+
+        pvWattsForm(newRequest).then(res => {
+            this.props.history.push(`/charts`)
+        })
+    }
+
+
     render() {
         return (
             <div className="container col-sm-12 mt-5">
@@ -28,7 +58,13 @@ class Input extends Component {
                     </div>
                 </div>
                 <br></br>
-                <button type="button" className="btn btn-lg btn-success btn-block">Submit</button>
+                <button
+                onClick={this.onSubmit}
+                type="submit"
+                className="btn btn-primary"
+                >
+                Submit
+                </button>
             </div>
         )
     }

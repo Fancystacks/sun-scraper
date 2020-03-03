@@ -27,3 +27,17 @@ export const login = user => {
       console.log(err)
     });
 }
+
+export const pvWattsForm = newRequest => {
+  return axios
+  .post('/test/pvWatts', {
+    address: newRequest.address,
+    system_capacity: newRequest.system_capacity
+  })
+  .then(response => {
+    console.log('hit the backend for pvWatts')
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
