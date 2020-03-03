@@ -5,7 +5,10 @@ class Input extends Component {
     constructor() {
         super()
         this.state = {
-            address:'',
+            street_address:'',
+            city: '',
+            home_state: '',
+            zip_code: '',
             system_capacity:''
         }
 
@@ -21,7 +24,10 @@ class Input extends Component {
         
 
         const newRequest = {
-            address: this.state.address,
+            street_address: this.state.street_address,
+            city: this.state.city,
+            home_state: this.state.home_state,
+            zip_code: this.state.zip_code,
             system_capacity: this.state.system_capacity
         }
 
@@ -33,45 +39,99 @@ class Input extends Component {
 
     render() {
         return (
-            <div className="container col-sm-8 mt-5">
-                <br></br>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="exampleFormControlInput1">Your Address</label>
+            <div>
+                <div className="container col-sm-8 mt-5">
+                    <br></br>
+                    <form onSubmit={this.onSubmit}>
+                        <h1 className="h3 mb-3 font-weight-normal">Enter your details</h1>
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlInput1">Street Address</label>
 
-                        <input
-                        type="text"
-                        className="form-control" 
-                        name='address'
-                        placeholder="e.g. 1234 Example Ave Denver, CO 80000"
-                        value={this.state.address}
-                        onChange={this.onChange}
+                            <input
+                            type="text"
+                            className="form-control" 
+                            name='street_address'
+                            placeholder="1234 Example Ave"
+                            value={this.state.street_address}
+                            onChange={this.onChange}
 
-                        />
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlInput1">City</label>
+
+                            <input
+                            type="text"
+                            className="form-control" 
+                            name='city'
+                            placeholder="Denver"
+                            value={this.state.city}
+                            onChange={this.onChange}
+
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlInput1">State</label>
+
+                            <input
+                            type="text"
+                            className="form-control" 
+                            name='home_state'
+                            placeholder="Colorado"
+                            value={this.state.home_state}
+                            onChange={this.onChange}
+
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlInput1">Zip Code</label>
+
+                            <input
+                            type="text"
+                            className="form-control" 
+                            name='zip_code'
+                            placeholder="80000"
+                            value={this.state.zip_code}
+                            onChange={this.onChange}
+
+                            />
+                        </div>
+                    </form>
+                </div>
+                <div className="container col-sm-8">
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlInput1">System Capacity (kW)</label>
+                            <input
+                            type="text"
+                            className="form-control"
+                            name='system_capacity'
+                            placeholder="100"
+                            value={this.state.system_capacity}
+                            onChange={this.onChange}
+                            
+                            />
+                        </div>
+                </div>
+                <div className="container col-sm-8">
+                    <div className="card">
+                        <div className="card-body">
+                            For reference by square footage:
+                            <br></br>
+                            10,000 sqft ~ 50kW system
+                            <br></br>
+                            25,000 sqft ~ 120kW system
+                            <br></br>
+                            50,000 sqft ~ 200kW system
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleFormControlInput1">System Capacity</label>
-                        <input
-                        type="text"
-                        className="form-control"
-                        name='system_capacity'
-                        placeholder="100kW"
-                        value={this.state.system_capacity}
-                        onChange={this.onChange}
-                        
-                        />
-                    </div>
-                </form>
-                <div className="card">
-                    <div className="card-body">
-                        For reference by square footage:
-                        <br></br>
-                        10,000 sqft ~ 50kW system
-                        <br></br>
-                        25,000 sqft ~ 120kW system
-                        <br></br>
-                        50,000 sqft ~ 200kW system
-                    </div>
+                    <br></br>
+                    <button
+                    onClick={this.onSubmit}
+                    type="submit"
+                    className="btn btn-lg btn-success btn-block"
+                    >
+                    Submit
+                    </button>
                 </div>
                 <br></br>
                 <button
