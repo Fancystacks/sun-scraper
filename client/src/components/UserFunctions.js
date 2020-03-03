@@ -35,7 +35,8 @@ export const pvWattsForm = newRequest => {
     city: newRequest.city,
     home_state: newRequest.home_state,
     zip_code: newRequest.zip_code,
-    system_capacity: newRequest.system_capacity
+    system_capacity: newRequest.system_capacity,
+    array_type: newRequest.array_type
   })
   .then(response => {
     console.log('hit the backend for pvWatts')

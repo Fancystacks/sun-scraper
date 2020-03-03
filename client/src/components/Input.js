@@ -9,7 +9,8 @@ class Input extends Component {
             city: '',
             home_state: '',
             zip_code: '',
-            system_capacity:''
+            system_capacity:'',
+            array_type: ''
         }
 
         this.onChange = this.onChange.bind(this)
@@ -28,7 +29,8 @@ class Input extends Component {
             city: this.state.city,
             home_state: this.state.home_state,
             zip_code: this.state.zip_code,
-            system_capacity: this.state.system_capacity
+            system_capacity: this.state.system_capacity,
+            array_type: this.state.array_type
         }
 
         pvWattsForm(newRequest).then(res => {
@@ -44,62 +46,68 @@ class Input extends Component {
                     <br></br>
                     <form onSubmit={this.onSubmit}>
                         <h1 className="h3 mb-3 font-weight-normal">Enter your details</h1>
-                        <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">Street Address</label>
+                        <div className="row">
+                            <div className="form-group col-sm-6">
+                                <label htmlFor="exampleFormControlInput1">Street Address</label>
 
-                            <input
-                            type="text"
-                            className="form-control" 
-                            name='street_address'
-                            placeholder="1234 Example Ave"
-                            value={this.state.street_address}
-                            onChange={this.onChange}
+                                <input
+                                type="text"
+                                className="form-control" 
+                                name='street_address'
+                                placeholder="1234 Example Ave"
+                                value={this.state.street_address}
+                                onChange={this.onChange}
 
-                            />
+                                />
+                            </div>
+                            
+                            <div className="form-group col-sm-6">
+                                <label htmlFor="exampleFormControlInput1">City</label>
+
+                                <input
+                                type="text"
+                                className="form-control" 
+                                name='city'
+                                placeholder="Denver"
+                                value={this.state.city}
+                                onChange={this.onChange}
+
+                                />
+                            </div>
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">City</label>
+                        <div className="row">
+                            <div className="form-group col-sm-6">
+                                <label htmlFor="exampleFormControlInput1">State</label>
 
-                            <input
-                            type="text"
-                            className="form-control" 
-                            name='city'
-                            placeholder="Denver"
-                            value={this.state.city}
-                            onChange={this.onChange}
+                                <input
+                                type="text"
+                                className="form-control" 
+                                name='home_state'
+                                placeholder="Colorado"
+                                value={this.state.home_state}
+                                onChange={this.onChange}
 
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">State</label>
+                                />
+                            </div>
+                            <div className="form-group col-sm-6">
+                                <label htmlFor="exampleFormControlInput1">Zip Code</label>
 
-                            <input
-                            type="text"
-                            className="form-control" 
-                            name='home_state'
-                            placeholder="Colorado"
-                            value={this.state.home_state}
-                            onChange={this.onChange}
+                                <input
+                                type="text"
+                                className="form-control" 
+                                name='zip_code'
+                                placeholder="80000"
+                                value={this.state.zip_code}
+                                onChange={this.onChange}
 
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">Zip Code</label>
-
-                            <input
-                            type="text"
-                            className="form-control" 
-                            name='zip_code'
-                            placeholder="80000"
-                            value={this.state.zip_code}
-                            onChange={this.onChange}
-
-                            />
+                                />
+                            </div>
                         </div>
                     </form>
                 </div>
                 <div className="container col-sm-8">
-                        <div className="form-group">
+                    <div className="row">
+                        <div className="form-group col-sm-6">
                             <label htmlFor="exampleFormControlInput1">System Capacity (kW)</label>
                             <input
                             type="text"
@@ -111,11 +119,28 @@ class Input extends Component {
                             
                             />
                         </div>
+                        <div className="form-group col-sm-6">
+                            <label htmlFor="exampleFormControlSelect1">Array Type</label>
+                            <select
+                            className="form-control"
+                            name='array_type'
+                            value={this.state.array_type}
+                            onChange={this.onChange}>
+
+                                <option>Fixed - Open Rack</option>
+                                <option>Fixed - Roof Mounted</option>
+                                <option>Single Axis</option>
+                                <option>Single Axis - Backtracking</option>
+                                <option>Dual Axis</option>
+
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div className="container col-sm-8">
                     <div className="card">
-                        <div className="card-body">
-                            For reference by square footage:
+                        <div className="card-body text-center">
+                            Capacity reference by square footage:
                             <br></br>
                             10,000 sqft ~ 50kW system
                             <br></br>
