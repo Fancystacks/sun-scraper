@@ -30,8 +30,8 @@ class Landing extends Component {
     const userLink = (
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link to="/profile" className="nav-link">
-            User
+          <Link to="/input" className="nav-link">
+            Input
           </Link>
         </li>
         <li className="nav-item">
@@ -39,20 +39,10 @@ class Landing extends Component {
             Logout
           </a>
         </li>
-      </ul>
-    )
-
-    const inputLink = (
-      <ul className="navbar-nav">
         <li className="nav-item">
-          <Link to="/input" className="nav-link">
-            Input
+          <Link to="/profile" className="nav-link">
+            Profile
           </Link>
-        </li>
-        <li className="nav-item">
-          <a href="/#" onClick={this.logOut.bind(this)} className="nav-link">
-            Input
-          </a>
         </li>
       </ul>
     )
