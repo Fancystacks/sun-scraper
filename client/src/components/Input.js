@@ -29,7 +29,7 @@ class Input extends Component {
             this.props.history.push(`/charts`)
         })
     }
-    
+
 
     render() {
         return (
@@ -77,7 +77,7 @@ class Input extends Component {
                 <button
                 onClick={this.onSubmit}
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-lg btn-success btn-block"
                 >
                 Submit
                 </button>
