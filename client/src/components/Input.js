@@ -8,7 +8,7 @@ class Input extends Component {
                 <br></br>
                 <h1 className="h3 mb-3 font-weight-normal">Enter your details</h1>
                     <div className="form-group col-sm-8">
-                        <label htmlFor="exampleFormControlInput1">Your Address:</label>
+                        <label htmlFor="exampleFormControlInput1">Street Address:</label>
                         <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="e.g. 1234 Example Ave Denver, CO 80000"></input>
                     </div>
                     <div className="form-group col-sm-6">
