@@ -37,8 +37,9 @@ class Login extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-6 mt-5 mx-auto">
+          <div className="col-md-5 mt-5 mx-auto">
             <form noValidate onSubmit={this.onSubmit}>
+            <br></br>
               <h1 className="h3 mb-3 font-weight-normal">Sign in to your account</h1>
               <div className="form-group">
                 <label htmlFor="email">Email address:</label>

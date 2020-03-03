@@ -14,8 +14,10 @@ app.use(
 )
 
 var Users = require('./routes/Users');
+var pvWatts = require('./routes/api/pvWatts')
 
 app.use('/users', Users);
+app.use('/test', pvWatts)
 
 db.sequelize
   .sync()
