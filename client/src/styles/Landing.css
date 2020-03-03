@@ -1,0 +1,18 @@
+body {
+    background-image: url(https://user-images.githubusercontent.com/38336934/75745790-94a74100-5cd5-11ea-8454-7e4309c27099.jpg);
+}
+
+.jumbotron {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: .85;
+}
+
+.form-group {
+    font-weight: bold;
+    opacity: .8;
+}
+
+.card {
+    opacity: .8;
+}
