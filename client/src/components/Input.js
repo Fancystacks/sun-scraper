@@ -3,15 +3,15 @@ import React, { Component } from "react";
 class Input extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container col-sm-8 mt-5">
                 <br></br>
                 <form>
-                    <div classname="form-group">
-                        <label for="exampleFormControlInput1">Your Address</label>
+                    <div className="form-group">
+                        <label htmlFor="exampleFormControlInput1">Your Address:</label>
                         <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="e.g. 1234 Example Ave Denver, CO 80000"></input>
                     </div>
                     <div className="form-group">
-                        <label for="exampleFormControlInput1">System Capacity</label>
+                        <label htmlFor="exampleFormControlInput1">System Capacity:</label>
                         <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="100kW"></input>
                     </div>
                 </form>
@@ -24,11 +24,10 @@ class Input extends Component {
                         25,000 sqft ~ 120kW system
                         <br></br>
                         50,000 sqft ~ 200kW system
-
                     </div>
                 </div>
                 <br></br>
-                <button type="button" className="btn btn-primary">Submit</button>
+                <button type="button" className="btn btn-lg btn-success btn-block">Submit</button>
             </div>
         )
     }
