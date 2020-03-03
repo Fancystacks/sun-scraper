@@ -6,7 +6,7 @@ class Input extends Component {
             <div className="container">
                 <br></br>
                 <form>
-                    <div classname="form-group">
+                    <div className="form-group">
                         <label for="exampleFormControlInput1">Your Address</label>
                         <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="e.g. 1234 Example Ave Denver, CO 80000"></input>
                     </div>
