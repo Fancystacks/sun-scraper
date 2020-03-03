@@ -12,8 +12,8 @@ class Input extends Component {
                         <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="e.g. 1234 Example Ave Denver, CO 80000"></input>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleFormControlInput1">System Capacity:</label>
-                        <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="100kW"></input>
+                        <label htmlFor="exampleFormControlInput1">System Capacity (kW):</label>
+                        <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="100"></input>
                     </div>
                 </form>
                 <div className="card">
