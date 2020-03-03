@@ -31,7 +31,10 @@ export const login = user => {
 export const pvWattsForm = newRequest => {
   return axios
   .post('/test/pvWatts', {
-    address: newRequest.address,
+    street_address: newRequest.street_address,
+    city: newRequest.city,
+    home_state: newRequest.home_state,
+    zip_code: newRequest.zip_code,
     system_capacity: newRequest.system_capacity
   })
   .then(response => {
