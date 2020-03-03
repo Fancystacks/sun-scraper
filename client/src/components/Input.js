@@ -3,15 +3,15 @@ import React, { Component } from "react";
 class Input extends Component {
     render() {
         return (
-            <div className="container col-sm-8 mt-5">
+            <div className="container col-sm-12 mt-5">
                 <form>
                 <br></br>
                 <h1 className="h3 mb-3 font-weight-normal">Enter your details</h1>
-                    <div className="form-group">
+                    <div className="form-group col-sm-8">
                         <label htmlFor="exampleFormControlInput1">Your Address:</label>
                         <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="e.g. 1234 Example Ave Denver, CO 80000"></input>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-6">
                         <label htmlFor="exampleFormControlInput1">System Capacity (kW):</label>
                         <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="100"></input>
                     </div>
