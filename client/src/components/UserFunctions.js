@@ -45,3 +45,31 @@ export const pvWattsForm = newRequest => {
     console.log(err)
   })
 }
+
+export const blackHillsForm = newRequest => {
+    return axios
+    .post('/test/pvWatts', {
+        csv: newRequest.csv
+    })
+    .then(response => {
+        console.log('hit the backend for blackHills')
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
+// let formData = new FormData();
+//     formData.append("file", csv);
+
+// let options = {
+//     method: "POST",
+//     headers: {"Authorization": localStorage.getItem("token")},
+//     body: formData
+// }
+
+// fetch("http:localhost:3000/api/v1/csvs", options)
+//     .then(resp => resp.json())
+//     .then(res => {
+//         alert(res.message)
+//     })

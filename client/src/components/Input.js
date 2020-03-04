@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { pvWattsForm } from './UserFunctions';
+import { blackHillsForm } from './UserFunctions';
 
 class Input extends Component {
     constructor() {
@@ -10,16 +11,24 @@ class Input extends Component {
             home_state: '',
             zip_code: '',
             system_capacity:'',
-            array_type: ''
+            array_type: '',
+            csv: null
         }
 
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     }
 
+    handleCSVChange = (e) => {
+        this.setState({
+            csv: e.target.files[0]
+        })
+    }
+
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
     }
+
     onSubmit(e) {
         e.preventDefault();
         
@@ -30,10 +39,15 @@ class Input extends Component {
             home_state: this.state.home_state,
             zip_code: this.state.zip_code,
             system_capacity: this.state.system_capacity,
-            array_type: this.state.array_type
+            array_type: this.state.array_type,
+            csv: this.state.csv
         }
 
         pvWattsForm(newRequest).then(res => {
+            this.props.history.push(`/dashboard`)
+        })
+
+        blackHillsForm(newRequest).then(res => {
             this.props.history.push(`/dashboard`)
         })
     }
@@ -147,6 +161,18 @@ class Input extends Component {
                             25,000 sqft ~ 120kW system
                             <br></br>
                             50,000 sqft ~ 200kW system
+                        </div>
+                    </div>
+                    <br></br>
+                    <div className="card">
+                        <div className="card-body">
+                            <input 
+                                type="file"
+                                ref={(input) => {this.filesInput = input}}
+                                name="file"
+                                placeholder="UploadCSV..."
+                                onChange={this.handleCSVChange}
+                            />
                         </div>
                     </div>
                     <br></br>
