@@ -49,6 +49,11 @@ class Landing extends Component {
             Dashboard
           </Link>
         </li>
+        <li className="nav-item">
+          <Link to="/carbon" className="nav-link">
+            Carbon
+          </Link>
+        </li>
       </ul>
     )
 
