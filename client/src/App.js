@@ -10,6 +10,25 @@ import Input from './components/Input';
 import Dashboard from './components/Dashboard'
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      chartData: {}
+    }
+  }
+
+  // componentWillMount() {
+  //   this.getChartData();
+  // }
+
+  // getChartData() {
+  //   //ajax call here
+  //   this.setState({
+  //     chartData: 
+  //   });
+
+  // }
+
   render() {
     return (
       <Router>
@@ -21,11 +40,11 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/input" component={Input} />
-            <Route exact path="/dashboard" component= {Dashboard}/>
+            <Route exact path="/dashboard" component={Dashboard} />
           </div>
         </div>
       </Router>
-    )
+  );
   }
 }
 
