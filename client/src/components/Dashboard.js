@@ -12,21 +12,6 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="main">
-                <div className="row">
-                    <div className="container">
-                        <br></br>
-                        <Line
-                            data={this.state.chartData}
-                            width={100}
-                            height={50}
-                            options={{ maintainAspectRatio: false }}
-                        />
-
-                        <br></br>
-
-                    </div>
-                </div>
             <div>
                 <div className="container col-sm-8 mt-5">
                     <br></br>
@@ -39,7 +24,6 @@ class Dashboard extends Component {
                 <BHPVwatts/>
                 <PV/>
             </div>
-        </div>
         )
     }
 }
