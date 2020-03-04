@@ -9,7 +9,8 @@ class Register extends Component {
       last_name: '',
       email: '',
       password: '',
-      errors: {}
+      errors: {},
+      valid_email: null
     }
 
     this.onChange = this.onChange.bind(this)
@@ -19,7 +20,18 @@ class Register extends Component {
   // setting our state on change
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
+     if (e.target.name === "email") {
+       this.checkSubmit(e.target.value)
+     }
   }
+
+  checkSubmit(email) {
+    let valid_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+    if (valid_email) {
+      this.setState({valid_email: valid_email})
+    }
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
@@ -90,6 +102,7 @@ class Register extends Component {
               <button
                 type="submit"
                 className="btn btn-lg btn-primary btn-block"
+                disabled={!this.state.valid_email}
               >
                 Register
               </button>
