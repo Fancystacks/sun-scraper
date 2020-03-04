@@ -32,17 +32,21 @@ class Dashboard extends Component {
     }
     render() {
         return (
-            <div className="container">
-                <br></br>
-                <Line
-                    data={this.state.chartData}
-                    width={100}
-                    height={50}
-                    options={{ maintainAspectRatio: false }}
-                />
+            <div className="main">
+                <div className="row">
+                    <div className="container">
+                        <br></br>
+                        <Line
+                            data={this.state.chartData}
+                            width={100}
+                            height={50}
+                            options={{ maintainAspectRatio: false }}
+                        />
 
-                <br></br>
+                        <br></br>
 
+                    </div>
+                </div>
             </div>
         )
     }

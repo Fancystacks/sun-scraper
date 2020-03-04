@@ -7,26 +7,27 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/Profile';
 import Input from './components/Input';
-import Dashboard from './components/Dashboard'
+import Dashboard from './components/Dashboard';
+import Carbon from './components/Carbon';
+import "../src/styles/Landing.css"
 
 class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <Navbar />
-          <Route exact path="/" component={Landing} />
-          <div className="container">
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/input" component={Input} />
-            <Route exact path="/dashboard" component= {Dashboard}/>
-          </div>
-        </div>
-      </Router>
-    )
-  }
+    render() {
+        return (
+            <Router>
+                <div className="App">
+                    <Navbar />
+                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/register" component={Register} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/profile" component={Profile} />
+                    <Route exact path="/input" component={Input} />
+                    <Route exact path="/dashboard" component={Dashboard} />
+                    <Route exact path="/carbon" component={Carbon} />
+                </div>
+            </Router >
+        )
+    }
 }
 
 export default App;
