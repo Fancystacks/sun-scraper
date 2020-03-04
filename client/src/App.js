@@ -28,6 +28,14 @@ class App extends Component {
             </Router >
         )
     }
+
+    constructor() {
+        super();
+        this.state = {
+            chartData: {}
+        }
+    }
+
 }
 
 export default App;
