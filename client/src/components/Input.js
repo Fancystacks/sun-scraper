@@ -6,11 +6,11 @@ class Input extends Component {
     constructor() {
         super()
         this.state = {
-            street_address:'',
+            street_address: '',
             city: '',
             home_state: '',
             zip_code: '',
-            system_capacity:'',
+            system_capacity: '',
             array_type: '',
             csv: null
         }
@@ -31,7 +31,7 @@ class Input extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        
+
 
         const newRequest = {
             street_address: this.state.street_address,
@@ -51,7 +51,7 @@ class Input extends Component {
             this.props.history.push(`/dashboard`)
         })
     }
-    
+
 
     render() {
         return (
@@ -65,26 +65,26 @@ class Input extends Component {
                                 <label htmlFor="exampleFormControlInput1">Street Address</label>
 
                                 <input
-                                type="text"
-                                className="form-control" 
-                                name='street_address'
-                                placeholder="1234 Example Ave"
-                                value={this.state.street_address}
-                                onChange={this.onChange}
+                                    type="text"
+                                    className="form-control"
+                                    name='street_address'
+                                    placeholder="1234 Example Ave"
+                                    value={this.state.street_address}
+                                    onChange={this.onChange}
 
                                 />
                             </div>
-                            
+
                             <div className="form-group col-sm-6">
                                 <label htmlFor="exampleFormControlInput1">City</label>
 
                                 <input
-                                type="text"
-                                className="form-control" 
-                                name='city'
-                                placeholder="Denver"
-                                value={this.state.city}
-                                onChange={this.onChange}
+                                    type="text"
+                                    className="form-control"
+                                    name='city'
+                                    placeholder="Denver"
+                                    value={this.state.city}
+                                    onChange={this.onChange}
 
                                 />
                             </div>
@@ -94,12 +94,12 @@ class Input extends Component {
                                 <label htmlFor="exampleFormControlInput1">State</label>
 
                                 <input
-                                type="text"
-                                className="form-control" 
-                                name='home_state'
-                                placeholder="Colorado"
-                                value={this.state.home_state}
-                                onChange={this.onChange}
+                                    type="text"
+                                    className="form-control"
+                                    name='home_state'
+                                    placeholder="Colorado"
+                                    value={this.state.home_state}
+                                    onChange={this.onChange}
 
                                 />
                             </div>
@@ -107,12 +107,12 @@ class Input extends Component {
                                 <label htmlFor="exampleFormControlInput1">Zip Code</label>
 
                                 <input
-                                type="text"
-                                className="form-control" 
-                                name='zip_code'
-                                placeholder="80000"
-                                value={this.state.zip_code}
-                                onChange={this.onChange}
+                                    type="text"
+                                    className="form-control"
+                                    name='zip_code'
+                                    placeholder="80000"
+                                    value={this.state.zip_code}
+                                    onChange={this.onChange}
 
                                 />
                             </div>
@@ -124,23 +124,24 @@ class Input extends Component {
                         <div className="form-group col-sm-6">
                             <label htmlFor="exampleFormControlInput1">System Capacity (kW)</label>
                             <input
-                            type="text"
-                            className="form-control"
-                            name='system_capacity'
-                            placeholder="100"
-                            value={this.state.system_capacity}
-                            onChange={this.onChange}
-                            
+                                type="text"
+                                className="form-control"
+                                name='system_capacity'
+                                placeholder="100"
+                                value={this.state.system_capacity}
+                                onChange={this.onChange}
+
                             />
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="exampleFormControlSelect1">Array Type</label>
                             <select
-                            className="form-control"
-                            name='array_type'
-                            value={this.state.array_type}
-                            onChange={this.onChange}>
+                                className="form-control"
+                                name='array_type'
+                                value={this.state.array_type}
+                                onChange={this.onChange}>
 
+                                <option selected>...</option>
                                 <option>Fixed - Open Rack</option>
                                 <option>Fixed - Roof Mounted</option>
                                 <option>Single Axis</option>
@@ -151,7 +152,7 @@ class Input extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="container col-sm-8">
+                <div className="container col-sm-8 mb-5">
                     <div className="card">
                         <div className="card-body text-center">
                             Capacity reference by square footage:
@@ -166,22 +167,21 @@ class Input extends Component {
                     <br></br>
                     <div className="card">
                         <div className="card-body">
-                            <input 
+                            <input
                                 type="file"
-                                ref={(input) => {this.filesInput = input}}
+                                ref={(input) => { this.filesInput = input }}
                                 name="file"
-                                placeholder="UploadCSV..."
                                 onChange={this.handleCSVChange}
                             />
                         </div>
                     </div>
                     <br></br>
                     <button
-                    onClick={this.onSubmit}
-                    type="submit"
-                    className="btn btn-lg btn-success btn-block"
+                        onClick={this.onSubmit}
+                        type="submit"
+                        className="btn btn-lg btn-success btn-block"
                     >
-                    Submit
+                        Submit
                     </button>
                 </div>
             </div>
