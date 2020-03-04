@@ -1,26 +1,51 @@
 import React, { Component } from "react";
+import {Bar, Line, Pie} from 'react-chartjs-2';
 
-class Input extends Component {
+class Dashboard extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            chartData:{
+                labels: ['Boston', 'Worcester', 'Springfield', "Lowell", 'Cambridge', 'New Bedford'],
+                datasets:[
+                    {
+                        label: 'population',
+                        data:[
+                        617594,
+                        181045,
+                        153060,
+                        106519,
+                        105162,
+                        95072
+                        ],
+                        backgroundColor:[
+                        'blue',
+                        'pink',
+                        'red',
+                        'green',
+                        'orange'
+                        ]
+                    }
+                ]
+            }
+        }
+    }
     render() {
         return (
             <div className="container">
                 <br></br>
-                <form>
-                    <div className="form-group">
-                        <label for="exampleFormControlInput1">Your Address</label>
-                        <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="e.g. 1234 Example Ave Denver, CO 80000"></input>
-                    </div>
-                    <div className="form-group">
-                        <label for="exampleFormControlInput1">System Capacity</label>
-                        <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="100kW"></input>
-                    </div>
-                </form>
-               
+                <Line
+                    data={this.state.chartData}
+                    width={100}
+                    height={50}
+                    options={{ maintainAspectRatio: false }}
+                />
+
                 <br></br>
-                <button type="button" className="btn btn-primary">Submit</button>
+
             </div>
         )
     }
 }
 
-export default Input;
+export default Dashboard;

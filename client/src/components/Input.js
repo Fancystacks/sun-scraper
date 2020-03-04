@@ -34,7 +34,7 @@ class Input extends Component {
         }
 
         pvWattsForm(newRequest).then(res => {
-            this.props.history.push(`/charts`)
+            this.props.history.push(`/dashboard`)
         })
     }
 
