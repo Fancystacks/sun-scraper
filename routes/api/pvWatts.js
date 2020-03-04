@@ -33,11 +33,10 @@ route.post('/pvWatts', (req, res) => {
     const URL = `https://developer.nrel.gov/api/pvwatts/v6.json?api_key=${apiKEY}&system_capacity=${systemCapacity}&module_type=0&losses=5&array_type=${arrayType}&tilt=38&azimuth=180&address=${address}`
 
     axios.get(URL).then(res => {
-    console.log(res.data);
+        console.log(res.data);
     });
 
     res.json(console.log('response from pvWatts.js route.post'))
 });
 
 module.exports = route;
-
