@@ -58,6 +58,9 @@ users.post('/login', (req, res) => {
           let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
             expiresIn: 1440
           })
+          // req.user.email = req.body.email
+          req.user = {email: req.body.email}
+          console.log(req.user)
           res.send(token)
         }
       } else {
@@ -87,6 +90,16 @@ users.get('/profile', (req, res) => {
     .catch(err => {
       res.send('error: ' + err);
     })
+})
+
+users.get('/userdata', (req, res) => {
+  var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY);
+  res.json(decoded)
+  // if(req.user) {
+  //   res.json(req.user)
+  // } else {
+  //   res.status(500).end()
+  // }
 })
 
 module.exports = users;
