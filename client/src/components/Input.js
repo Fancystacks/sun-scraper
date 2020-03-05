@@ -12,7 +12,8 @@ class Input extends Component {
             zip_code: '',
             system_capacity: '',
             array_type: '',
-            csv: null
+            csv: null,
+            ac_annual: '',
         }
 
         this.onChange = this.onChange.bind(this)
@@ -44,14 +45,18 @@ class Input extends Component {
         }
 
         pvWattsForm(newRequest).then(res => {
+            console.log(res)
+            this.setState({
+                ac_annual: res.data.outputs.ac_annual
+            })
+            console.log(this.state.ac_annual)
             this.props.history.push(`/dashboard`)
         })
 
         blackHillsForm(newRequest).then(res => {
-            this.props.history.push(`/dashboard`)
+            // this.props.history.push(`/dashboard`)
         })
     }
-
 
     render() {
         return (

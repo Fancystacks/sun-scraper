@@ -38,12 +38,12 @@ export const pvWattsForm = newRequest => {
             system_capacity: newRequest.system_capacity,
             array_type: newRequest.array_type
         })
-        .then(response => {
-            console.log('hit the backend for pvWatts')
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        // .then(response => {
+        //     console.log(response)
+        // })
+        // .catch(err => {
+        //     console.log(err)
+        // })
 }
 
 export const blackHillsForm = newRequest => {
