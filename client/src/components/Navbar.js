@@ -31,17 +31,7 @@ class Landing extends Component {
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link to="/input" className="nav-link">
-            Input
-          </Link>
-        </li>
-        <li className="nav-item">
-          <a href="/#" onClick={this.logOut.bind(this)} className="nav-link">
-            Logout
-          </a>
-        </li>
-        <li className="nav-item">
-          <Link to="/profile" className="nav-link">
-            Profile
+            Upload
           </Link>
         </li>
         <li className="nav-item">
@@ -53,6 +43,16 @@ class Landing extends Component {
           <Link to="/carbon" className="nav-link">
             Carbon
           </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/profile" className="nav-link">
+            Profile
+          </Link>
+        </li>
+        <li className="nav-item">
+          <a href="/#" onClick={this.logOut.bind(this)} className="nav-link">
+            Logout
+          </a>
         </li>
       </ul>
     )
