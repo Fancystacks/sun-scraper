@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Bar, Line, Pie, Radar, Doughnut } from 'react-chartjs-2';
 
 
 class BHDChart extends Component {
@@ -24,12 +24,21 @@ class BHDChart extends Component {
                             43534,
                             45455,
                         ],
+
+                        
+
                         backgroundColor: [
                             'blue',
                             'pink',
                             'red',
                             'green',
-                            'orange'
+                            'orange',
+                            'blue',
+                            'pink',
+                            'red',
+                            'green',
+                            'orange',
+                            'purple'
                         ]
                     }
                 ]
@@ -50,7 +59,7 @@ class BHDChart extends Component {
         return (
             <div className="container">
                 <br></br>
-                <Bar
+                <Line
                     data={this.state.chartData}
                     width={100}
                     height={50}

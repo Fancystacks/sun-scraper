@@ -40,7 +40,7 @@ export const pvWattsForm = newRequest => {
       email: newRequest.email
     })
     // .then(response => {
-    //   response.json(response.data)
+    //   console.log('hit the backend for pvWatts')
     // })
     // .catch(err => {
     //   console.log(err)
