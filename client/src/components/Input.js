@@ -63,7 +63,6 @@ class Input extends Component {
         })
     }
 
-
     render() {
         return (
             <div className="main">

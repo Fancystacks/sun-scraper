@@ -89,5 +89,4 @@ users.get('/profile', (req, res) => {
     })
 })
 
-
 module.exports = users;

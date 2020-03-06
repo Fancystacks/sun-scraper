@@ -4,11 +4,7 @@ import BHDChart from '../components/BHDChart';
 import PV from '../components/PV';
 import BHPVwatts from '../components/BHPVwatts';
 
-
-
 class Dashboard extends Component {
-    
-    
 
     render() {
         return (
