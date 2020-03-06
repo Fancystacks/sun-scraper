@@ -39,25 +39,12 @@ export const pvWattsForm = newRequest => {
       array_type: newRequest.array_type,
       email: newRequest.email
     })
-    .then(response => {
-      console.log('hit the backend for pvWatts')
-    })
-    .catch(err => {
-      console.log(err)
-    })
-}
-
-export const blackHillsForm = newRequest => {
-  return axios
-    .post('/dashboard', {
-      csv: newRequest.csv
-    })
-    .then(response => {
-      console.log('hit the backend for blackHills')
-    })
-    .catch(err => {
-      console.log(err)
-    })
+    // .then(response => {
+    //   console.log('hit the backend for pvWatts')
+    // })
+    // .catch(err => {
+    //   console.log(err)
+    // })
 }
 
 // export const backendPVwatts = request => {

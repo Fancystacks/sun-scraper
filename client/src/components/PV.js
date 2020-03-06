@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Bar, Line, Pie, Radar } from 'react-chartjs-2';
 
 class PVwatts extends Component {
     constructor(props) {
@@ -9,28 +9,39 @@ class PVwatts extends Component {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                 datasets: [
                     {
-                        label: 'Population',
+                        label: 'AC Monthly',
                         data: [
-                            617594,
-                            181045,
-                            153060,
-                            106519,
-                            105162,
-                            95072,
-                            14545,
-                            13453,
-                            35345,
-                            43534,
-                            45455,
+                            25461.048828125,
+                            25704.68359375,
+                            31491.333984375,
+                            28630.357421875,
+                            29440.4140625,
+                            28719.59375,
+                            28692.705078125,
+                            28183.94140625,
+                            28403.0859375,
+                            27758.98828125,
+                            26095.23046875,
+                            24275.607421875
                         ],
+
+                        
+
                         backgroundColor: [
                             'blue',
                             'pink',
                             'red',
                             'green',
-                            'orange'
+                            'orange',
+                            'blue',
+                            'pink',
+                            'red',
+                            'green',
+                            'orange',
+                            'brown',
+                            'magenta'
                         ]
-                    }
+                    }, 
                 ]
             }
         }   
@@ -55,7 +66,7 @@ class PVwatts extends Component {
                     options={{
                         title: {
                             display: this.props.displayTitle,
-                            text: 'BlackHills Data (Raw)',
+                            text: 'PVWatts (Raw)',
                             fontSize: 25
                         },
                         legend: {

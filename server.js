@@ -13,6 +13,10 @@ app.use(
   })
 )
 
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static("client/build"));
+}
+
 var Users = require('./routes/Users');
 var pvWatts = require('./routes/api/pvWatts')
 
