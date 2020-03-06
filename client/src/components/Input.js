@@ -14,6 +14,7 @@ class Input extends Component {
             array_type: '',
             csv: null,
             ac_annual: '',
+            ac_monthly: {},
         }
 
         this.onChange = this.onChange.bind(this)
@@ -47,9 +48,11 @@ class Input extends Component {
         pvWattsForm(newRequest).then(res => {
             console.log(res)
             this.setState({
-                ac_annual: res.data.outputs.ac_annual
+                ac_annual: res.data.outputs.ac_annual,
+                ac_monthly: res.data.outputs.ac_monthly
             })
             console.log(this.state.ac_annual)
+            console.log(this.state.ac_monthly)
             this.props.history.push(`/dashboard`)
         })
 
