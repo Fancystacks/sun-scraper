@@ -24,3 +24,20 @@
 .card {
     opacity: .8;
 }
+
+.bold {
+    color: green;
+    font-size: larger;
+}
+
+.fa-fire {
+    color: red;
+}
+
+.fa-recycle {
+    color: blue;
+}
+
+.fa-tree {
+    color: darkgreen;
+}
