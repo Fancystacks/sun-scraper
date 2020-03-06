@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { pvWattsForm } from './UserFunctions';
 import { blackHillsForm } from './UserFunctions';
+import jwt_decode from 'jwt-decode';
 
 class Input extends Component {
     constructor() {
@@ -15,11 +16,20 @@ class Input extends Component {
             csv: null,
             ac_annual: '',
             ac_monthly: {},
+            email: ''
         }
 
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     }
+
+    componentDidMount() {
+        const token = localStorage.usertoken
+        const decoded = jwt_decode(token)
+        this.setState({
+          email: decoded.email
+        })
+      }
 
     handleCSVChange = (e) => {
         this.setState({
@@ -42,7 +52,8 @@ class Input extends Component {
             zip_code: this.state.zip_code,
             system_capacity: this.state.system_capacity,
             array_type: this.state.array_type,
-            csv: this.state.csv
+            csv: this.state.csv,
+            email: this.state.email
         }
 
         pvWattsForm(newRequest).then(res => {

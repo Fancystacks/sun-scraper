@@ -17,6 +17,27 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING
     },
+    street_address: {
+      type: DataTypes.STRING
+    },
+    city: {
+      type: DataTypes.STRING
+    },
+    home_state: {
+      type: DataTypes.STRING
+    },
+    zip_code: {
+      type: DataTypes.STRING
+    },
+    zip_code: {
+      type: DataTypes.STRING
+    },
+    system_capacity: {
+      type: DataTypes.STRING
+    },
+    array_type: {
+      type: DataTypes.STRING
+    },
     created: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW
