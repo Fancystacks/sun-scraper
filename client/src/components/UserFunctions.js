@@ -47,19 +47,6 @@ export const pvWattsForm = newRequest => {
     // })
 }
 
-export const blackHillsForm = newRequest => {
-  return axios
-    .post('/dashboard', {
-      csv: newRequest.csv
-    })
-    .then(response => {
-      console.log('hit the backend for blackHills')
-    })
-    .catch(err => {
-      console.log(err)
-    })
-}
-
 // export const backendPVwatts = request => {
 //   return axios.get('/pvWatts')
 //     .then(function (response) {
