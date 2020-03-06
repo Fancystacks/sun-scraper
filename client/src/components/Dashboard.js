@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Bar, Line, Pie } from 'react-chartjs-2';
 import BHDChart from '../components/BHDChart';
 import PV from '../components/PV';
 import BHPVwatts from '../components/BHPVwatts';
@@ -8,8 +8,6 @@ import BHPVwatts from '../components/BHPVwatts';
 
 class Dashboard extends Component {
     
-    
-
     render() {
         return (
             <div>
@@ -21,8 +19,8 @@ class Dashboard extends Component {
                         </div>
                 </div>
                 <BHDChart />
-                <BHPVwatts/>
-                <PV/>
+                <BHPVwatts />
+                <PV />
             </div>
         )
     }
