@@ -4,16 +4,20 @@ import { Bar, Line, Pie, Radar } from 'react-chartjs-2';
 
 class PVwatts extends Component {
         
-    state = {
-        ac_monthly: ''
-    }
+    // state = {
+    //     ac_monthly: '',
+        
+    // }
 
     componentDidMount() {
         const getStorage = () => {
             var current_monthly = localStorage.getItem("ac_monthly")
             var newCurrent = JSON.parse(current_monthly)
+            var newChartData = { ...this.state.chartData}
+            newChartData.datasets[0].data = newCurrent;
             this.setState({
-                ac_monthly: newCurrent
+                ac_monthly: newCurrent,
+                chartData: newChartData 
             })
         }
         getStorage();
@@ -22,12 +26,13 @@ class PVwatts extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            ac_monthly: '',
             chartData: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                 datasets: [
                     {
                         label: 'AC Monthly',
-                        data: this.state.ac_monthly,
+                        data: [],
                         
 
                         backgroundColor: [
@@ -61,6 +66,7 @@ class PVwatts extends Component {
 
     render() {
         console.log(this.state.ac_monthly[0])
+        console.log(this.state.chartData.datasets[0].data)
         return (
             <div className="container">
                 <br></br>
