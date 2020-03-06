@@ -50,7 +50,8 @@ class Input extends Component {
             zip_code: this.state.zip_code,
             system_capacity: this.state.system_capacity,
             array_type: this.state.array_type,
-            csv: this.state.csv
+            csv: this.state.csv,
+            email: this.state.email
         }
 
         pvWattsForm(newRequest).then(res => {
