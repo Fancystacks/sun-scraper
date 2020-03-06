@@ -1,15 +1,15 @@
 const express = require('express');
-const users = express.Router();
+const router = express.Router();
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-const {User} = require('../models');
-users.use(cors());
+const {User} = require('../../models');
+router.use(cors());
 
 process.env.SECRET_KEY = 'secret';
 
-users.post('/register', (req, res) => {
+router.post('/register', (req, res) => {
   const today = new Date()
   const userData = {
     first_name: req.body.first_name,
@@ -46,7 +46,7 @@ users.post('/register', (req, res) => {
     })
 })
 
-users.post('/login', (req, res) => {
+router.post('/login', (req, res) => {
   User.findOne({
     where: {
       email: req.body.email
@@ -69,7 +69,7 @@ users.post('/login', (req, res) => {
     })
 })
 
-users.get('/profile', (req, res) => {
+router.get('/profile', (req, res) => {
   var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY);
 
   User.findOne({
@@ -90,4 +90,4 @@ users.get('/profile', (req, res) => {
 })
 
 
-module.exports = users;
+module.exports = router;
