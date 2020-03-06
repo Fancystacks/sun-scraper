@@ -25,6 +25,7 @@ class Register extends Component {
      }
   }
 
+  // button deactivated until email validation with RegEx
   checkSubmit(email) {
     let valid_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     if (valid_email) {
