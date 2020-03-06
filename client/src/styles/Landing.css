@@ -1,5 +1,13 @@
-body {
+.main {
     background-image: url(https://user-images.githubusercontent.com/38336934/75745790-94a74100-5cd5-11ea-8454-7e4309c27099.jpg);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.carbon {
+    background-image: url(https://img4.goodfon.com/wallpaper/nbig/9/60/vetnam-hoang-su-phi-les-gory-plantatsii-derevia-zelen-dzhung.jpg);
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 .jumbotron {
@@ -15,4 +23,21 @@ body {
 
 .card {
     opacity: .8;
+}
+
+.bold {
+    color: green;
+    font-size: larger;
+}
+
+.fa-fire {
+    color: red;
+}
+
+.fa-recycle {
+    color: blue;
+}
+
+.fa-tree {
+    color: darkgreen;
 }

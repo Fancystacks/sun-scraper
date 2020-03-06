@@ -2,11 +2,41 @@ require("dotenv").config();
 const axios = require('axios');
 const express = require('express');
 const route = express.Router();
+// const jwt = require('jsonwebtoken');
+// const bcrypt = require('bcrypt');
+const { User } = require('../../models');
+
+
 
 route.post('/pvWatts', (req, res) => {
-    console.log('data from input page', req.body)
+    console.log('data from input page...!...', req.body)
     console.log(req.body.system_capacity)
     console.log(`${req.body.street_address}  ${req.body.city}  ${req.body.home_state}  ${req.body.zip_code}`)
+
+
+
+    User.update(
+        {
+            street_address: req.body.street_address,
+            city: req.body.city,
+            home_state: req.body.home_state,
+            zip_code: req.body.zip_code,
+            system_capacity: req.body.system_capacity,
+            array_type: req.body.array_type
+        },
+        {
+            where: {
+                email: req.body.email
+            }
+        }  
+        
+    ).then(user => {
+        res.json(user)
+    }).catch( (err) => {
+        console.log(err)
+    })
+
+
     const apiKEY = process.env.API_KEY;
     const systemCapacity = req.body.system_capacity;
     let arrayType;
@@ -32,12 +62,10 @@ route.post('/pvWatts', (req, res) => {
     const address = (`${req.body.street_address} ${req.body.city} ${req.body.home_state} ${req.body.zip_code}`);
     const URL = `https://developer.nrel.gov/api/pvwatts/v6.json?api_key=${apiKEY}&system_capacity=${systemCapacity}&module_type=0&losses=5&array_type=${arrayType}&tilt=38&azimuth=180&address=${address}`
 
-    axios.get(URL).then(res => {
-    console.log(res.data);
+    axios.get(URL).then(response => {
+        res.json(response.data)
     });
 
-    res.json(console.log('response from pvWatts.js route.post'))
 });
 
 module.exports = route;
-

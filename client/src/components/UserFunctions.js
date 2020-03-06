@@ -30,18 +30,58 @@ export const login = user => {
 
 export const pvWattsForm = newRequest => {
   return axios
-  .post('/test/pvWatts', {
-    street_address: newRequest.street_address,
-    city: newRequest.city,
-    home_state: newRequest.home_state,
-    zip_code: newRequest.zip_code,
-    system_capacity: newRequest.system_capacity,
-    array_type: newRequest.array_type
-  })
-  .then(response => {
-    console.log('hit the backend for pvWatts')
-  })
-  .catch(err => {
-    console.log(err)
-  })
+    .post('/test/pvWatts', {
+      street_address: newRequest.street_address,
+      city: newRequest.city,
+      home_state: newRequest.home_state,
+      zip_code: newRequest.zip_code,
+      system_capacity: newRequest.system_capacity,
+      array_type: newRequest.array_type,
+      email: newRequest.email
+    })
+    .then(response => {
+      console.log('hit the backend for pvWatts')
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
+
+export const blackHillsForm = newRequest => {
+  return axios
+    .post('/dashboard', {
+      csv: newRequest.csv
+    })
+    .then(response => {
+      console.log('hit the backend for blackHills')
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
+// export const backendPVwatts = request => {
+//   return axios.get('/pvWatts')
+//     .then(function (response) {
+//       console.log(response);
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+// }
+
+
+// let formData = new FormData();
+//     formData.append("file", csv);
+
+// let options = {
+//     method: "POST",
+//     headers: {"Authorization": localStorage.getItem("token")},
+//     body: formData
+// }
+
+// fetch("http:localhost:3000/api/v1/csvs", options)
+//     .then(resp => resp.json())
+//     .then(res => {
+//         alert(res.message)
+//     })
