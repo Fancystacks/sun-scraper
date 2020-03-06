@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const register = newUser => {
   return axios
-    .post('/users/register', {
+    .post('/api/users/register', {
       first_name: newUser.first_name,
       last_name: newUser.last_name,
       email: newUser.email,
@@ -15,7 +15,7 @@ export const register = newUser => {
 
 export const login = user => {
   return axios
-    .post('/users/login', {
+    .post('/api/users/login', {
       email: user.email,
       password: user.password
     })
@@ -30,7 +30,7 @@ export const login = user => {
 
 export const pvWattsForm = newRequest => {
   return axios
-    .post('/test/pvWatts', {
+    .post('/api/pvWatts/data', {
       street_address: newRequest.street_address,
       city: newRequest.city,
       home_state: newRequest.home_state,
