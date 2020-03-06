@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { pvWattsForm } from './UserFunctions';
-import { blackHillsForm } from './UserFunctions';
 import jwt_decode from 'jwt-decode';
 
 class Input extends Component {
@@ -62,14 +61,17 @@ class Input extends Component {
                 ac_annual: res.data.outputs.ac_annual,
                 ac_monthly: res.data.outputs.ac_monthly
             })
+            var ac_annual = res.data.outputs.ac_annual
+            console.log(ac_annual)
             console.log(this.state.ac_annual)
-            console.log(this.state.ac_monthly)
             this.props.history.push(`/dashboard`)
-        })
-
-        blackHillsForm(newRequest).then(res => {
-            // this.props.history.push(`/dashboard`)
-        })
+            function setStorage() {
+                localStorage.setItem("ac_annual", ac_annual);
+            }
+            setStorage();
+        });
+        
+        
     }
 
     render() {

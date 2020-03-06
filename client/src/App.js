@@ -13,11 +13,6 @@ import "../src/styles/Landing.css"
 
 class App extends Component {
     
-    
-    state= {
-        ac_annual: null
-    }
-    
     render() {
         return (
             <Router>
