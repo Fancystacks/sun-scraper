@@ -3,11 +3,6 @@ import { Bar, Line, Pie, Radar } from 'react-chartjs-2';
 
 class PVwatts extends Component {
         
-    // state = {
-    //     ac_monthly: '',
-        
-    // }
-
     componentDidMount() {
         const getStorage = () => {
             var current_monthly = localStorage.getItem("ac_monthly")
