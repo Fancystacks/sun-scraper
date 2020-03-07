@@ -41,3 +41,5 @@ db.sequelize
   .catch(function(err) {
     console.log(err, "Something went wrong with the db sync!");
   });
+
+  //Test comments for Mike

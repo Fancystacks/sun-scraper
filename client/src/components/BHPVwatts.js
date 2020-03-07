@@ -3,9 +3,21 @@ import { Bar, Line, Pie } from 'react-chartjs-2';
 
 
 class BHPVwatts extends Component {
+    
+    componentDidMount() {
+        const getStorage = () => {
+            var current_monthly = localStorage.getItem("ac_monthly")
+            var newCurrent = JSON.parse(current_monthly)
+            this.setState({
+                ac_monthly: newCurrent
+            })
+            getStorage();
+        }
+    }
     constructor(props) {
         super(props);
         this.state = {
+            ac_monthly: '',
             chartData: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                 datasets: [
