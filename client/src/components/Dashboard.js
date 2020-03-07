@@ -5,11 +5,7 @@ import PV from '../components/PV';
 import BHPVwatts from '../components/BHPVwatts';
 
 class Dashboard extends Component {
-<<<<<<< HEAD
-
-=======
     
->>>>>>> master
     render() {
         return (
             <div>
