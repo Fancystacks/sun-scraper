@@ -60,8 +60,8 @@ class PVwatts extends Component {
     }
 
     render() {
-        // console.log(this.state.ac_monthly[0])
-        // console.log(this.state.chartData.datasets[0].data)
+        console.log(this.state.ac_monthly[0])
+        console.log(this.state.chartData.datasets[0].data)
         return (
             <div className="container">
                 <br></br>
