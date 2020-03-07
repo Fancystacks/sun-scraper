@@ -1,40 +1,38 @@
 require("dotenv").config();
 const axios = require('axios');
 const express = require('express');
-const route = express.Router();
+const router = express.Router();
 // const jwt = require('jsonwebtoken');
 // const bcrypt = require('bcrypt');
-const { User } = require('../../models');
+// const { User } = require('../../models');
 
 
 
-route.post('/pvWatts', (req, res) => {
+router.post('/data', (req, res) => {
     console.log('data from input page...!...', req.body)
     console.log(req.body.system_capacity)
     console.log(`${req.body.street_address}  ${req.body.city}  ${req.body.home_state}  ${req.body.zip_code}`)
 
-
-
-    User.update(
-        {
-            street_address: req.body.street_address,
-            city: req.body.city,
-            home_state: req.body.home_state,
-            zip_code: req.body.zip_code,
-            system_capacity: req.body.system_capacity,
-            array_type: req.body.array_type
-        },
-        {
-            where: {
-                email: req.body.email
-            }
-        }  
+    // User.update(
+    //     {
+    //         street_address: req.body.street_address,
+    //         city: req.body.city,
+    //         home_state: req.body.home_state,
+    //         zip_code: req.body.zip_code,
+    //         system_capacity: req.body.system_capacity,
+    //         array_type: req.body.array_type
+    //     },
+    //     {
+    //         where: {
+    //             email: req.body.email
+    //         }
+    //     }  
         
-    ).then(user => {
-        res.json(user)
-    }).catch( (err) => {
-        console.log(err)
-    })
+    // ).then(user => {
+    //     res.json(user)
+    // }).catch( (err) => {
+    //     console.log(err)
+    // })
 
 
     const apiKEY = process.env.API_KEY;
@@ -66,6 +64,27 @@ route.post('/pvWatts', (req, res) => {
         res.json(response.data)
     });
 
+    // User.update(
+    //     {
+    //         street_address: req.body.street_address,
+    //         city: req.body.city,
+    //         home_state: req.body.home_state,
+    //         zip_code: req.body.zip_code,
+    //         system_capacity: req.body.system_capacity,
+    //         array_type: req.body.array_type
+    //     },
+    //     {
+    //         where: {
+    //             email: req.body.email
+    //         }
+    //     }  
+        
+    // ).then(user => {
+    //     res.json(user)
+    // }).catch( (err) => {
+    //     console.log(err)
+    // })
+
 });
 
-module.exports = route;
+module.exports = router;

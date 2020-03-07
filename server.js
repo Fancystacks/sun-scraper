@@ -5,6 +5,8 @@ var app = express();
 const db = require("./models");
 var PORT = process.env.PORT || 3001;
 
+var routes = require('./routes');
+
 app.use(bodyParser.json())
 app.use(cors())
 app.use(
@@ -17,11 +19,13 @@ if(process.env.NODE_ENV === "production"){
   app.use(express.static("client/build"));
 }
 
-var Users = require('./routes/Users');
-var pvWatts = require('./routes/api/pvWatts')
 
-app.use('/users', Users);
-app.use('/test', pvWatts)
+app.use(routes);
+// var Users = require('./routes/Users');
+// var pvWatts = require('./routes/api/pvWatts')
+
+// app.use('/users', Users);
+// app.use('/test', pvWatts)
 
 db.sequelize
   .sync()
