@@ -6,8 +6,6 @@ const router = express.Router();
 // const bcrypt = require('bcrypt');
 // const { User } = require('../../models');
 
-
-
 router.post('/data', (req, res) => {
     console.log('data from input page...!...', req.body)
     console.log(req.body.system_capacity)
@@ -33,7 +31,6 @@ router.post('/data', (req, res) => {
     // }).catch( (err) => {
     //     console.log(err)
     // })
-
 
     const apiKEY = process.env.API_KEY;
     const systemCapacity = req.body.system_capacity;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Bar, Line, Pie, Radar, Doughnut } from 'react-chartjs-2';
 
-
 class BHDChart extends Component {
     constructor(props) {
         super(props);
@@ -83,9 +82,6 @@ class BHDChart extends Component {
         )
     }
 
-
-
 }
-
 
 export default BHDChart;
