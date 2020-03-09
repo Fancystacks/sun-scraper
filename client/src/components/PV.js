@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Bar, Line, Pie, Radar } from 'react-chartjs-2';
 
-
 class PVwatts extends Component {
         
     componentDidMount() {
@@ -29,7 +28,6 @@ class PVwatts extends Component {
                         label: 'AC Monthly',
                         data: [],
                         
-
                         backgroundColor: [
                             'blue',
                             'pink',
@@ -47,8 +45,7 @@ class PVwatts extends Component {
                     }, 
                 ]
             }
-        }
-        
+        }   
 
     }
 
@@ -88,9 +85,6 @@ class PVwatts extends Component {
         )
     }
 
-
-
 }
-
 
 export default PVwatts;
