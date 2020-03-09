@@ -47,6 +47,13 @@ export const pvWattsForm = newRequest => {
     // })
 }
 
+
+export const importDataCsv = csvData => {
+  return axios.post('/api/uploads', {
+    csvData: csvData
+  })
+}
+
 // export const backendPVwatts = request => {
 //   return axios.get('/pvWatts')
 //     .then(function (response) {

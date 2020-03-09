@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { pvWattsForm } from './UserFunctions';
+import { importDataCsv } from './UserFunctions'
 import jwt_decode from 'jwt-decode';
+import ReactFileReader from 'react-file-reader'
 
 class Input extends Component {
     constructor() {
@@ -12,7 +14,7 @@ class Input extends Component {
             zip_code: '',
             system_capacity: '',
             array_type: '',
-            csv: null,
+            csvData: '',
             ac_annual: '',
             ac_monthly: '',
             email: ''
@@ -26,14 +28,27 @@ class Input extends Component {
         const token = localStorage.usertoken
         const decoded = jwt_decode(token)
         this.setState({
-          email: decoded.email
+            email: decoded.email
         })
-      }
+    }
 
-    handleCSVChange = (e) => {
-        this.setState({
-            csv: e.target.files[0]
-        })
+    // handleFiles(files) {
+    //     var reader = new FileReader();
+    //     reader.onload = function (e) {
+    //         // Use reader.result
+    //         alert(reader.result)
+    //     }
+    //     reader.readAsText(files[0]);
+    // }
+
+    handleFiles = files => {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+
+            // Use reader.result
+            alert(reader.result)
+        }
+        reader.readAsText(files[0]);
     }
 
     onChange(e) {
@@ -42,6 +57,12 @@ class Input extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+
+        // const csvData = {
+        //     csvData: this.state.csvData
+        // }
+        //  importDataCsv(csvData)
+
 
 
         const newRequest = {
@@ -71,8 +92,8 @@ class Input extends Component {
             }
             setStorage();
         });
-        
-        
+
+
     }
 
     render() {
@@ -190,12 +211,14 @@ class Input extends Component {
                         <br></br>
                         <div className="card">
                             <div className="card-body">
-                                <input
-                                    type="file"
-                                    ref={(input) => { this.filesInput = input }}
-                                    name="file"
-                                    onChange={this.handleCSVChange}
-                                />
+                                <ReactFileReader
+                                    handleFiles={this.handleFiles}
+                                    value={this.state.csvData}
+                                    onChange={this.onChange}
+                                    fileTypes={'.csv'}
+                                >
+                                    <button className='btn'>Upload</button>
+                                </ReactFileReader>
                             </div>
                         </div>
                         <br></br>
