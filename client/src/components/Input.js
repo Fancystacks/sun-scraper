@@ -14,7 +14,7 @@ class Input extends Component {
             zip_code: '',
             system_capacity: '',
             array_type: '',
-            csvData: '',
+            csvData: [],
             ac_annual: '',
             ac_monthly: '',
             email: ''
@@ -31,26 +31,35 @@ class Input extends Component {
             email: decoded.email
         })
     }
-
-    // handleFiles(files) {
-    //     var reader = new FileReader();
-    //     reader.onload = function (e) {
-    //         // Use reader.result
-    //         alert(reader.result)
-    //     }
-    //     reader.readAsText(files[0]);
-    // }
-
+///////////////////////// csv file. Here I am trying to add info to state /////////////////////////////
     handleFiles = files => {
         var reader = new FileReader();
         reader.onload = function (e) {
+            const response = reader.result;
+            const rows = response.split('\n')
+            rows.shift();
+            const rowData = [];
+            for (const row of rows) {
+                const values = row.split(',')
+                rowData.push({
+                    MTR_NUM: values[0],
+                    DATE: values[1],
+                    TIME: values[2],
+                    MONTH: values[3],
+                    WEEKDAY: values[4],
+                    peak_kW: values[5],
+                    PEAK_kWH: values[6],
+                    kWh: values[7],
+                    kW: values[8],
+                    email: 'email@email.com'
+                })
+            }
 
-            // Use reader.result
-            alert(reader.result)
+
         }
         reader.readAsText(files[0]);
     }
-
+///////////////////////////////////////////////////////////////////////////////////////////
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
     }
@@ -58,10 +67,10 @@ class Input extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        const csvData = {
-            csvData: this.state.csvData
-        }
-         importDataCsv(csvData)
+        // const csvData = {
+        //     csvData: this.state.csvData
+        // }
+        // importDataCsv(csvData)
 
 
 

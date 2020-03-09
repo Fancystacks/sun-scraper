@@ -2,40 +2,10 @@ require("dotenv").config();
 const axios = require('axios');
 const express = require('express');
 const router = express.Router();
-// const User = require('../../models')
-// const jwt = require('jsonwebtoken');
-// const bcrypt = require('bcrypt');
-// const { User } = require('../../models');
-
 
 
 router.post('/data', (req, res) => {
-    console.log('data from input page...!...', req.body)
-
-
-
-    // User.update('/User',
-    //     {
-    //         street_address: req.body.street_address,
-    //         city: req.body.city,
-    //         home_state: req.body.home_state,
-    //         zip_code: req.body.zip_code,
-    //         system_capacity: req.body.system_capacity,
-    //         array_type: req.body.array_type
-    //     },
-    //     {
-    //         where: {
-    //             email: req.body.email
-    //         }
-    //     }  
-
-    // ).then(user => {
-    //     res.json(data)
-    // }).catch( (err) => {
-    //     console.log(err)
-    // })
-
-
+    
     const apiKEY = process.env.API_KEY;
     const systemCapacity = req.body.system_capacity;
     let arrayType;
@@ -62,9 +32,11 @@ router.post('/data', (req, res) => {
     const URL = `https://developer.nrel.gov/api/pvwatts/v6.json?api_key=${apiKEY}&system_capacity=${systemCapacity}&module_type=0&losses=5&array_type=${arrayType}&tilt=38&azimuth=180&address=${address}`
 
     axios.get(URL).then(response => {
+        
         res.json(response.data)
     });
 
+//////// this worked at some point. this should update user info in mysql database with pvWatts api info /////////
 
     // User.update(
     //     {
@@ -86,6 +58,8 @@ router.post('/data', (req, res) => {
     // }).catch( (err) => {
     //     console.log(err)
     // })
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 });
 

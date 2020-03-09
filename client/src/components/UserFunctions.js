@@ -47,7 +47,7 @@ export const pvWattsForm = newRequest => {
   // })
 }
 
-
+////////////////////// csv file /////////////////////////////////
 export const importDataCsv = csvData => {
   return axios.post('/api/uploads', {
     csvData: csvData

@@ -1,14 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-const { pvWatts } = require('../../models');
+const { pvData } = require('../../models');
 
-router.post('/uploads', (req, res) => {
-    pvWatts.create(req.body)
+router.post('/', (req, res) => {
+  console.log('req.body...', req.body)
+  pvData.create(req.body)
     .then(user => {
-      res.json(req.body)
+      console.log(user)
+      res.json(user)
     })
-    .catch(err => {
-      res.send('error: ' + err);
+    .catch(error => {
+      console.log(error)
+      res.send('error: ' + error);
     })
 })
+
+module.exports = router;
