@@ -8,6 +8,8 @@
     background-image: url(https://img4.goodfon.com/wallpaper/nbig/9/60/vetnam-hoang-su-phi-les-gory-plantatsii-derevia-zelen-dzhung.jpg);
     min-height: 100vh;
     min-width: 100vw;
+    background-size: cover;
+
 }
 
 .jumbotron {

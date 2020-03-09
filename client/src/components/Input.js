@@ -67,13 +67,6 @@ class Input extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        // const csvData = {
-        //     csvData: this.state.csvData
-        // }
-        // importDataCsv(csvData)
-
-
-
         const newRequest = {
             street_address: this.state.street_address,
             city: this.state.city,
@@ -101,8 +94,7 @@ class Input extends Component {
             }
             setStorage();
         });
-
-
+         
     }
 
     render() {
