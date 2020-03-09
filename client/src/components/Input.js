@@ -43,7 +43,6 @@ class Input extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-
         const newRequest = {
             street_address: this.state.street_address,
             city: this.state.city,
@@ -71,8 +70,7 @@ class Input extends Component {
             }
             setStorage();
         });
-        
-        
+         
     }
 
     render() {
