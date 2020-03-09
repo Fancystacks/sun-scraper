@@ -41,18 +41,18 @@ class BHPVwatts extends Component {
                             56700,
                         ],
                         backgroundColor: [
-                            'blue',
-                            'blue',
-                            'blue',
-                            'blue',
-                            'blue',
-                            'blue',
-                            'blue',
-                            'blue',
-                            'blue',
-                            'blue',
-                            'blue',
-                            'blue'
+                            'brown',
+                            'brown',
+                            'brown',
+                            'brown',
+                            'brown',
+                            'brown',
+                            'brown',
+                            'brown',
+                            'brown',
+                            'brown',
+                            'brown',
+                            'brown'
                         ]
                     },
 
@@ -73,18 +73,18 @@ class BHPVwatts extends Component {
                             26635
                         ],
                         backgroundColor: [
-                            'red',
-                            'red',
-                            'red',
-                            'red',
-                            'red',
-                            'red',
-                            'red',
-                            'red',
-                            'red',
-                            'red',
-                            'red',
-                            'red'
+                            'green',
+                            'green',
+                            'green',
+                            'green',
+                            'green',
+                            'green',
+                            'green',
+                            'green',
+                            'green',
+                            'green',
+                            'green',
+                            'green'
                         ]
                     }
 
