@@ -59,6 +59,11 @@ class Landing extends Component {
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-0">
+        
+        <a className="navbar-brand" href="/">
+            <img src="favicon.ico" width="30" height="30" className="d-inline-block align-top mr-2" alt=""></img>
+            Sun Scraper
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -72,7 +77,7 @@ class Landing extends Component {
         </button>
 
         <div
-          className="collapse navbar-collapse justify-content-md-center"
+          className="collapse navbar-collapse"
           id="navbarsExample10"
         >
           <ul className="navbar-nav">
