@@ -12,17 +12,18 @@ class BHDChart extends Component {
                     {
                         label: 'Population',
                         data: [
-                            617594,
-                            181045,
-                            153060,
-                            106519,
-                            105162,
-                            95072,
-                            14545,
-                            13453,
-                            35345,
-                            43534,
-                            45455,
+                            60700,
+                            60300,
+                            60900,
+                            60200,
+                            52900,
+                            50832,
+                            59360,
+                            64201,
+                            58443,
+                            58500,
+                            58600,
+                            56700,
                         ],
 
                         
@@ -72,7 +73,7 @@ class BHDChart extends Component {
                         legend: {
                             display: this.props.displayLegend,
                             position: this.props.legendPosition
-                        }
+                        },
                     }}
                 />
 

@@ -28,8 +28,6 @@ class PVwatts extends Component {
                     {
                         label: 'AC Monthly',
                         data: [],
-                        
-
                         backgroundColor: [
                             'blue',
                             'pink',
@@ -78,7 +76,8 @@ class PVwatts extends Component {
                         legend: {
                             display: this.props.displayLegend,
                             position: this.props.legendPosition
-                        }
+                        },
+                        
                     }}
                 />
 

@@ -8,8 +8,11 @@ class BHPVwatts extends Component {
         const getStorage = () => {
             var current_monthly = localStorage.getItem("ac_monthly")
             var newCurrent = JSON.parse(current_monthly)
+            var newChartData = { ...this.state.chartData}
+            newChartData.datasets[1].data = newCurrent;
             this.setState({
-                ac_monthly: newCurrent
+                ac_monthly: newCurrent,
+                chartData: newChartData
             })
             getStorage();
         }
@@ -24,18 +27,18 @@ class BHPVwatts extends Component {
                     {
                         label: 'Black Hills AC Monthly',
                         data: [
-                            25461.048828125,
-                            25704.68359375,
-                            31491.333984375,
-                            28630.357421875,
-                            29440.4140625,
-                            28719.59375,
-                            28692.705078125,
-                            28183.94140625,
-                            28403.0859375,
-                            27758.98828125,
-                            26095.23046875,
-                            24275.607421875
+                            60700,
+                            60300,
+                            60900,
+                            60200,
+                            52900,
+                            50832,
+                            59360,
+                            64201,
+                            58443,
+                            58500,
+                            58600,
+                            56700,
                         ],
                         backgroundColor: [
                             'blue',
@@ -56,22 +59,19 @@ class BHPVwatts extends Component {
                     {
                         label: 'PV Watts AC Monthly',
                         data: [
-                            25461.048828125,
-                            25704.68359375,
-                            31491.333984375,
-                            28630.357421875,
-                            29440.4140625,
-                            28719.59375,
-                            28692.705078125,
-                            28183.94140625,
-                            28403.0859375,
-                            27758.98828125,
-                            26095.23046875,
-                            24275.607421875
+                            27282,
+                            26691,
+                            33600,
+                            32813,
+                            34249,
+                            32405,
+                            31773,
+                            32641,
+                            32630,
+                            31281,
+                            27187,
+                            26635
                         ],
-
-                        
-
                         backgroundColor: [
                             'red',
                             'red',
@@ -106,7 +106,7 @@ class BHPVwatts extends Component {
         return (
             <div className="container">
                 <br></br>
-                <Bar 
+                <Bar
                     data={this.state.chartData}
                     width={100}
                     height={50}
@@ -119,6 +119,13 @@ class BHPVwatts extends Component {
                         legend: {
                             display: this.props.displayLegend,
                             position: this.props.legendPosition
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
                         }
                     }}
                 />
