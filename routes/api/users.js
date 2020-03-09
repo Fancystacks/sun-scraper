@@ -89,9 +89,4 @@ router.get('/profile', (req, res) => {
     })
 })
 
-<<<<<<< HEAD:routes/Users.js
-module.exports = users;
-=======
-
 module.exports = router;
->>>>>>> master:routes/api/users.js

@@ -28,7 +28,6 @@ class PVwatts extends Component {
                         label: 'AC Monthly',
                         data: [],
                         
-
                         backgroundColor: [
                             'blue',
                             'pink',
@@ -87,6 +86,5 @@ class PVwatts extends Component {
     }
 
 }
-
 
 export default PVwatts;
