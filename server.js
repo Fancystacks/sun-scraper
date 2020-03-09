@@ -21,11 +21,7 @@ if(process.env.NODE_ENV === "production"){
 
 
 app.use(routes);
-// var Users = require('./routes/Users');
-// var pvWatts = require('./routes/api/pvWatts')
 
-// app.use('/users', Users);
-// app.use('/test', pvWatts)
 
 db.sequelize
   .sync()

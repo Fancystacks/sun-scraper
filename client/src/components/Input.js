@@ -58,10 +58,10 @@ class Input extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        // const csvData = {
-        //     csvData: this.state.csvData
-        // }
-        //  importDataCsv(csvData)
+        const csvData = {
+            csvData: this.state.csvData
+        }
+         importDataCsv(csvData)
 
 
 

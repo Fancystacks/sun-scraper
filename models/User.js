@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define("User", {
     id: {
       type: DataTypes.INTEGER,
@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     email: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     password: {
       type: DataTypes.STRING
@@ -43,8 +43,21 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: DataTypes.NOW
     }
   },
-  {
-    timestamps: false
-  })
+    {
+      timestamps: false,
+      indexes: [
+        {
+          unique: false,
+          fields: ['email']
+        }]
+    })
+
+  User.associate = function (models) {
+    User.hasMany(models.pvData, {
+      onDelete: 'CASCADE'
+    })
+  };
+
+
   return User;
 }

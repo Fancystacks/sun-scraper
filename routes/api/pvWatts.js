@@ -2,6 +2,7 @@ require("dotenv").config();
 const axios = require('axios');
 const express = require('express');
 const router = express.Router();
+// const User = require('../../models')
 // const jwt = require('jsonwebtoken');
 // const bcrypt = require('bcrypt');
 // const { User } = require('../../models');
@@ -10,10 +11,10 @@ const router = express.Router();
 
 router.post('/data', (req, res) => {
     console.log('data from input page...!...', req.body)
-    console.log(req.body.system_capacity)
-    console.log(`${req.body.street_address}  ${req.body.city}  ${req.body.home_state}  ${req.body.zip_code}`)
 
-    // User.update(
+
+
+    // User.update('/User',
     //     {
     //         street_address: req.body.street_address,
     //         city: req.body.city,
@@ -27,9 +28,9 @@ router.post('/data', (req, res) => {
     //             email: req.body.email
     //         }
     //     }  
-        
+
     // ).then(user => {
-    //     res.json(user)
+    //     res.json(data)
     // }).catch( (err) => {
     //     console.log(err)
     // })
@@ -64,6 +65,7 @@ router.post('/data', (req, res) => {
         res.json(response.data)
     });
 
+
     // User.update(
     //     {
     //         street_address: req.body.street_address,
@@ -78,7 +80,7 @@ router.post('/data', (req, res) => {
     //             email: req.body.email
     //         }
     //     }  
-        
+
     // ).then(user => {
     //     res.json(user)
     // }).catch( (err) => {

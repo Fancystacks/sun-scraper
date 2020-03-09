@@ -31,6 +31,7 @@
     "jwt-decode": "^2.2.0",
     "mysql": "^2.14.1",
     "mysql2": "^1.6.1",
+    "react-file-reader": "^1.1.4",
     "react-router-dom": "^5.1.2",
     "sequelize": "^4.38.0"
   }

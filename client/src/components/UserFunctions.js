@@ -39,12 +39,12 @@ export const pvWattsForm = newRequest => {
       array_type: newRequest.array_type,
       email: newRequest.email
     })
-    // .then(response => {
-    //   console.log('hit the backend for pvWatts')
-    // })
-    // .catch(err => {
-    //   console.log(err)
-    // })
+  // .then(response => {
+  //   console.log('hit the backend for pvWatts')
+  // })
+  // .catch(err => {
+  //   console.log(err)
+  // })
 }
 
 
@@ -54,28 +54,3 @@ export const importDataCsv = csvData => {
   })
 }
 
-// export const backendPVwatts = request => {
-//   return axios.get('/pvWatts')
-//     .then(function (response) {
-//       console.log(response);
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
-// }
-
-
-// let formData = new FormData();
-//     formData.append("file", csv);
-
-// let options = {
-//     method: "POST",
-//     headers: {"Authorization": localStorage.getItem("token")},
-//     body: formData
-// }
-
-// fetch("http:localhost:3000/api/v1/csvs", options)
-//     .then(resp => resp.json())
-//     .then(res => {
-//         alert(res.message)
-//     })
