@@ -42,12 +42,12 @@ class Carbon extends Component {
                                     <h5 className="card-title">Carbon sequestered by:</h5>
                                     <p className="card-text"><strong className="bold">{Math.round(acres)}</strong> acres of U.S. forests in one year</p>
                                     <p className="card-text text-center"><i className="fas fa-tree fa-5x"></i> <i className="fas fa-tree fa-5x"></i></p>
-                                    <p className="card-text">In other words, the amount of CO<sub>2</sub> you are saving is comparable to the amount of oxygen produced by this many acres of forest land.</p>
+                                    <p className="card-text">In other words this is the amount of forested acres needed to sequester the amount of CO<sub>2</sub> you offset with solar panels every year.</p>
                                 </div>
                             </div>
                             <div className="card bg-light col-sm m-3">
                                 <div className="card-body">
-                                    <h5 className="card-title">Emissions avoided by:</h5>
+                                    <h5 className="card-title">Tons of waste recycled instead of landfilled:</h5>
                                     <p className="card-text"><strong className="bold">{Math.round(waste)}</strong> tons of waste recycled</p>
                                     <p className="card-text text-center"><i className="fas fa-truck fa-5x"></i> <i className="fas fa-recycle fa-5x"></i></p>
                                     <p className="card-text">The energy and emissions you would create could offset this much waste from being left in a landfill. </p>
