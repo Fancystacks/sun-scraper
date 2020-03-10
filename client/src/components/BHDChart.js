@@ -9,7 +9,7 @@ class BHDChart extends Component {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                 datasets: [
                     {
-                        label: 'Population',
+                        label: 'Total KiloWatt Hours',
                         data: [
                             60700,
                             60300,
